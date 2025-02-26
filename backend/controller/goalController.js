@@ -1,3 +1,5 @@
+const goal=require('../model/goalModel')
+
 const getGoals=(req,res)=>{
     res.json({mes:"hi"})
 }
