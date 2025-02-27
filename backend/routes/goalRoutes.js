@@ -1,13 +1,15 @@
 const express=require("express")
 const router=express.Router()
 const {getGoals,postGoals,putGoals,deleteGoals}=require('../controller/goalController')
-router.get('/get',getGoals)
+const {protect}=require('../middleware/userMiddleware')
 
-router.post('/post',postGoals)
+router.get('/get',protect,getGoals)
 
-router.put('/put/:id',putGoals)
+router.post('/post',protect,postGoals)
 
-router.delete('/delete/:id',deleteGoals)
+router.put('/put/:id',protect,putGoals)
+
+router.delete('/delete/:id',protect,deleteGoals)
 
 
 
