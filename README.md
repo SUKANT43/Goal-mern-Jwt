@@ -34,7 +34,7 @@ This is a full-stack **MERN (MongoDB, Express.js, React.js, Node.js)** authentic
 ## ⚙️ Installation
 ### 1️⃣ Clone the repository
 ```sh
-git clone https:https:github.com/SUKANT43/Goal-mern-Jwt
+git clone https:github.com/SUKANT43/Goal-mern-Jwt
 cd mern-auth-goals
 ```
 
