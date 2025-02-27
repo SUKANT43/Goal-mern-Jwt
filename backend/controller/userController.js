@@ -65,7 +65,12 @@ const loginUser = async (req, res) => {
 
 const getME=async(req,res)=>{
     try{
-
+        const {id,name,email}=await User.findById(req.user.id)
+        res.status(200).json({
+            _id:id,
+            name,
+            email
+        })
     }
     catch(err){
         res.status(400).json(err)
