@@ -49,10 +49,16 @@ const loginUser = async (req, res) => {
         return res.status(400).json({ msg: "Enter correct password" });
       }
   
-      return res.status(200).json({ msg: "Hi Hello" });
+      return res.status(200).json({ id:checkUser.id,name:checkUser.name,email:checkUser.email,token:generateJWT(checkUser.id)});
     } catch (err) {
       res.status(500).json({ msg:err });
     }
+  };
+  
+  const generateJWT = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET, {
+      expiresIn: '30d',
+    });
   };
   
 
