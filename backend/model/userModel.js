@@ -21,4 +21,4 @@ const userSchema=mongoose.Schema(
     }
 )
 
-modules.exports=mongoose.model('auth',userSchema) 
+module.exports=mongoose.model('auth',userSchema) 
