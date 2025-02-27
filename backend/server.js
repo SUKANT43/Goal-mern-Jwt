@@ -5,6 +5,13 @@ const port=process.env.PORT||2008;
 const router=require('./routes/goalRoutes')
 const app=express()
 const connectDB=require('./config/db')
+
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+    next();
+});
+
+
 app.use(cors())
 
 app.use(express.json())

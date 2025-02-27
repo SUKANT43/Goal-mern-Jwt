@@ -1,15 +1,15 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-const goal=mongoose.Schema(
-    {
-       text:{
-        type:String,
-        required:[true,"Enter the text value"]
-       }, 
+const goalSchema = mongoose.Schema(
+  {
+    text: {
+      type: String,
+      required: [true, "Enter the text value"],
     },
-    {
-        timeStamps:true
-    }
-)
+  },
+  {
+    timestamps: true, 
+  }
+);
 
-module.exports=mongoose.model('goal',goal)
+module.exports = mongoose.model("Goal", goalSchema);
